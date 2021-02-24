@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wengi</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body class="m-0 p-0" style="font-family: 'Roboto', sans-serif; color:rgba(0,0,0,0.7);">
+    <!--
+        Hi! I am Farhan.
+        I am a scholar, front-end designer, and developer.
+        Want to know me more? Check it out. <-- portofolio.pdf
+     -->
+    <div style="background:#dee2e6;" class="d-sm-flex align-items-center overflow-hidden">
+        <div class="text-center text-sm-start p-3" style="order:2; color:rgba(0,0,0,0.6);">
+            <h2>Felis Catos</h2>
+            <h5>Scholar, Frontend Designer, Developer.</h5>
+            <h6>Indonesia, Jakarta.</h6>
+        </div>
+        <div style="width:20em; order:1; max-width:100%;">
+            <img src="./felis.png" class="w-100">
+        </div>
+    </div>
+    <div class="p-3 py-4 container-md">
+        <div class="text-center mt-4">
+            <h2>My Projects</h2>
+        </div>
+        <div id="projects" class="row row-cols-1 row-cols-md-2 g-4 my-4">
+            <div class="col" v-for="repo in repos">
+                <div class="card shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ repo.data.name }}</h5>
+                        <p class="card-text">{{ repo.data.description }}</p>
+                        <h6 class="card-subtitle mt-2 text-muted">{{repo.data.languages}}</h6>
+                        <a v-bind:href="repo.data.html_url" class="stretched-link"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- html,css,js,jquery,bootstrap,    vuejs,php,sql,laravel,nodejs,     expressjs,
+         mongodb,firebase,android java,java,           opencv,figma,GImp,LMMS,BabelJS,
+         webpack,VS Code, -->
+    <div style="background:#dee2e6;" class="p-3  py-4">
+        <div class="text-center my-4">
+            <h2>Libraries & Tools</h2>
+        </div>
+        <div class="text-center my-4">
+            <div class="d-inline-block mt-4" style="width:42em; max-width:100%;">
+                <div class="p-1 m-1 d-inline-block bg-light" style="height:4em;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" class="h-100">
+                </div>
+                <div class="p-1 m-1 d-inline-block bg-light" style="height:4em;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" class="h-100">
+                </div>
+                <div class="m-1 d-inline-block" style="height:4em;">
+                    <img src="https://raw.githubusercontent.com/voodootikigod/logo.js/master/js.png" class="h-100">
+                </div>
+                <div class="p-1 m-1 d-inline-block bg-light" style="height:4em;">
+                    <img src="https://avatars.githubusercontent.com/u/70142?v=4" class="h-100">
+                </div>
+                <div class="p-1 m-1 d-inline-block" style="height:4em;">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-bootstrap-fill h-100" viewBox="0 0 16 16">
+                        <path d="M6.375 7.125V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23H6.375zm0 3.762h1.898c1.184 0 1.81-.48 1.81-1.377 0-.885-.65-1.348-1.886-1.348H6.375v2.725z"/>
+                        <path d="M4.002 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4h-8zm1.06 12V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396H5.062z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="p-3 py-4">
+        <div>
+            <div class="text-center my-4">
+                <h1 style="color: rgba(0,0,0,0.6);">Wants to know me more?</h1>
+            </div>
+        </div>
+        <div>
+            <div class="my-4 text-center">
+                <div class="card d-inline-block text-start" style="width:34em; max-width:100%;">
+                    <div class="card-body">
+                        <div>Contact me to ...</div>
+                        <div class="my-2">
+                            <a class="btn btn-link text-decoration-none" href="mailto:animationfar@gmail.com">
+                                <img style="width:2.3em;" src="https://lh3.googleusercontent.com/0rpHlrX8IG77awQMuUZpQ0zGWT7HRYtpncsuRnFo6V3c8Lh2hPjXnEuhDDd-OsLz1vua4ld2rlUYFAaBYk-rZCODmi2eJlwUEVsZgg" alt="">
+                                <span class="mx-1">animationfar@gmail.com</span>
+                            </a>
+                        </div>
+                        <div class="my-2">
+                            <a class="btn btn-link text-decoration-none" href="https://wa.me/+6281298433723">
+                                <img style="width:2.3em;" src="./whatsapp/WhatsApp_Logo_1/WhatsApp_Logo_2.png" alt="">
+                                <span class="mx-1">+6281298433723</span>
+                            </a>
+                        </div>                        
+                        <div class="my-2">
+                            <a class="btn btn-link text-decoration-none" href="https://line.me/ti/p/e3R4Yej55c">
+                                <img style="width:2.3em;" src="./LINE/LINE_APP.png" alt="">
+                                <span class="mx-1">farhanms134</span>
+                            </a>
+                        </div>                        
+                        <div class="my-2">
+                            <a class="btn btn-link text-decoration-none" href="https://www.linkedin.com/in/farhanms123/">
+                                <img style="width:2.5em;" src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg" alt="">
+                                <span>Farhan M S</span>
+                            </a>
+                        </div>
+                        <div class="my-2">
+                            <a class="btn btn-link text-decoration-none" href="https://www.instagram.com/farhanms123/">
+                                <img style="width:2em;" src="https://instagram-brand.com/wp-content/uploads/2016/11/Instagram_AppIcon_Aug2017.png?w=300" alt="">
+                                <span class="mx-2">Farhan MS [farhanms123]</span>
+                            </a>
+                        </div>
+                        <div class="my-2">
+                            <a class="btn btn-link text-decoration-none" href="https://www.instagram.com/fmsfelis123/">
+                                <img style="width:2em;" src="https://instagram-brand.com/wp-content/uploads/2016/11/Instagram_AppIcon_Aug2017.png?w=300" alt="">
+                                <span class="mx-2">Felis Catos [fmsfelis123]</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="background:#dee2e6;" class="p-3">
+        <div class="text-center">
+            2021 &copy; Farhan MS as Felis catos.
+        </div>
+    </div>
+    <script>
+        var res, vue_projects;
+        
+        Promise.all([
+            axios.get("https://api.github.com/repos/FarhanMS123/TheHelloWorld"),
+            axios.get("https://api.github.com/repos/FarhanMS123/WebServer"),
+            axios.get("https://api.github.com/repos/FarhanMS123/Lite-LoginPHP"),
+            axios.get("https://api.github.com/repos/FarhanMS123/GDCS")
+        ]).then(async (_res)=>{
+            res = _res;
+
+            for(var i in res){
+                res[i].data.languages = "plain";
+                ((i)=>{
+                    axios.get(res[i].data.languages_url).then((lang)=>{
+                        res[i].data._languages = lang;
+                        res[i].data.languages = Object.keys(lang.data).join(", ");
+                    });
+                })(i)
+            }
+
+            vue_projects = new Vue({
+                el:"#projects",
+                data:{
+                    repos:res
+                }
+            });
+        }).catch((e)=>{
+            console.log(e);
+        });
+    </script>
+</body>
+</html>
