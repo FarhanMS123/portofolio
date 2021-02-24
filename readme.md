@@ -36,3 +36,11 @@
 ![JQuery](https://avatars.githubusercontent.com/u/70142?v=4)
 
 - https://icons.getbootstrap.com/icons/bootstrap-fill/
+
+- https://github.com/vuejs/art
+
+![VueJS](https://raw.githubusercontent.com/vuejs/art/master/logo.svg)
+
+- https://www.php.net/download-logos.php
+
+![PHP](https://www.php.net/images/logos/new-php-logo.png)
